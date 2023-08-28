@@ -1,7 +1,7 @@
 import axios from "axios";
 import React from "react";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Add = () => {
   const [book,setBook] = useState({
@@ -30,9 +30,10 @@ const Add = () => {
     <div className='form'>
         <h1>Add New Book</h1>
         <input type="text" placeholder='title' onChange={handleChange} name='title'/>
-        <input type="text" placeholder='desc' onChange={handleChange} name='desc'/>
+        <textarea rows={5} type="text" placeholder='desc' onChange={handleChange} name='desc'/>
         <input type="text" placeholder='cover' onChange={handleChange} name='cover'/>
         <button className="formButton" onClick={handleClick}>Add</button>
+        <Link to="/">See all books</Link>
     </div>
   )
 }
